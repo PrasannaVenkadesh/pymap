@@ -494,12 +494,14 @@
       "id": "railway",
       "type": "line",
       "source": "openmaptiles",
-      "source-layer": "mainroad",
-      "filter": ["==", "class", "rail"],
+      "source-layer": "py_railway",
+      "filter": ["==", "railway", "rail"],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "hsl(34, 12%, 66%)",
-        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
+        "line-color": "black",
+	"line-opacity": 0.5,
+	"line-dasharray": [3, 1],
+	"line-width": {"base": 1.6, "stops": [[8, 1], [16, 10]]}
       }
     },
     {
