@@ -307,7 +307,7 @@
       "id": "road_minor",
       "type": "line",
       "source": "openmaptiles",
-      "source-layer": "py_rest",
+      "source-layer": "py_minor_roads",
       "minzoom": 13,
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -451,7 +451,7 @@
       "id": "road_major_motorway",
       "type": "line",
       "source": "openmaptiles",
-      "source-layer": "highways",
+      "source-layer": "py_major_roads",
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "orange",
@@ -697,7 +697,7 @@
       "id": "road_major_label",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "highways",
+      "source-layer": "py_major_roads",
       "minzoom": 13,
       "layout": {
         "symbol-placement": "line",
@@ -716,10 +716,32 @@
       }
     },
     {
+      "id": "water_label",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "py_waterbodies",
+      "minzoom": 10,
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-letter-spacing": 0.1,
+        "text-rotation-alignment": "map",
+        "text-size": {"base": 1.4, "stops": [[10, 8], [20, 14]]},
+        "text-transform": "uppercase",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
+      }
+    },
+
+    {
       "id": "road_minor_label",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "py_rest",
+      "source-layer": "py_minor_roads",
       "minzoom": 13,
       "layout": {
         "symbol-placement": "line",
@@ -762,7 +784,7 @@
       "id": "place_label_city",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "suburb",
+      "source-layer": "py_suburb",
       "maxzoom": 16,
       "layout": {
         "text-field": "{name}",
