@@ -12,24 +12,12 @@
     <script src="maplibre-gl.js"></script>
     <link href="maplibre-gl.css" rel="stylesheet" />
     <script src="pmtiles-2.5.0.js" type="text/javascript"></script>
-
-
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
-
-	</style>
+    </style>
 </head>
 <body>
-    <style>
-	.car-marker {
-	  display: block;
-	  border: none;
-	  border-radius: 50%;
-	  cursor: pointer;
-	  padding: 0;
-	}
-    </style>
     <div id='map'></div>
     <script>
         let protocol = new pmtiles.Protocol();
@@ -42,6 +30,14 @@
             style: 'styles/maptiler-basic.json',
             zoom: 13,
         });
+
+	// Add zoom and rotation controls to the map
+	map.addControl(new maplibregl.NavigationControl(), "top-right");
+	// Add Attribution Control to the map
+	map.addControl(new maplibregl.AttributionControl({
+	  compact: true,
+	  customAttribution: "Data: <a target='_blank' href='https://osm.org'>OpenStreetMap</a> | &copy; OpenStreetMap Contributors"
+	}));
     </script>
 </body>
 </html>
